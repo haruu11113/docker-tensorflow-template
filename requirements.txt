@@ -1,0 +1,12 @@
+greenlet==1.1.0
+importlib-metadata==4.5.0
+jedi==0.17.2
+msgpack==1.0.2
+parso==0.7.1
+pluggy==0.13.1
+pynvim==0.4.3
+python-jsonrpc-server==0.4.0
+python-language-server==0.36.2
+typing-extensions==3.10.0.0
+ujson==4.0.2
+zipp==3.4.1
