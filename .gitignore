@@ -1,5 +1,11 @@
+## Working dir
 repo/*
 !repo/.gitkeep
 
-# Docker Compose
+## Docker Compose
 .env
+
+
+## JupyterNotebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
