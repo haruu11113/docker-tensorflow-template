@@ -1,0 +1,5 @@
+repo/*
+!repo/.gitkeep
+
+# Docker Compose
+.env
