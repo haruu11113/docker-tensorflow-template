@@ -6,5 +6,6 @@ services:
       dockerfile: ./infra/docker/tensorflow/Dockerfile
     ports:
     - "8888:8888"
+    - "5000:5000"
     volumes:
         - ./repo:/work/repo
