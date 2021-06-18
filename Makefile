@@ -31,4 +31,4 @@ log-dev-watch:
 dev:
 	docker-compose exec dev bash
 ml:
-	docker-compose exevc dev mlflow server --host 0.0.0.0
+	docker-compose exec dev mlflow server --host 0.0.0.0
