@@ -28,8 +28,8 @@ RUN apt-get update && apt-get install -y \
     git \
     tree \
     vim
-# RUN pip install --upgrade pip
-RUN pip3 install --upgrade pip setuptools
+RUN pip install --upgrade pip
+# RUN python3 pip install --upgrade pip setuptools
 
 # 作業ディレクトリを指定
 WORKDIR /work/
