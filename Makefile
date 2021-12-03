@@ -3,8 +3,9 @@ up:
 build:
 	docker-compose build --no-cache --force-rm
 init:
-	docker-compose up -d --build
-remake:
+	@make build
+	@make up
+rebuild:
 	@make destroy
 	@make init
 stop:
