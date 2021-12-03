@@ -27,7 +27,8 @@ RUN apt-get update && apt-get install -y \
     curl \
     git \
     tree \
-    vim
+    vim \
+    graphviz
 RUN pip install --upgrade pip
 # RUN python3 pip install --upgrade pip setuptools
 
