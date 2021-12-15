@@ -1,6 +1,6 @@
 version: "3"
 services:
-  dev:
+  tf:
     build:
       context: .
       dockerfile: ./infra/docker/tensorflow/Dockerfile
@@ -16,4 +16,4 @@ services:
     - "5000:5000"
     - "6006:6006"
     volumes:
-        - ./repo:/work/repo
+        - ./repo:/home/ec2-user/repo/

@@ -25,11 +25,11 @@ logs:
 	docker-compose logs
 logs-watch:
 	docker-compose logs --follow
-log-dev:
-	docker-compose logs dev
-log-dev-watch:
-	docker-compose logs --follow dev
-dev:
-	docker-compose exec dev bash
+log-tf:
+	docker-compose logs tf
+log-tf-watch:
+	docker-compose logs --follow tf
+tf:
+	docker-compose exec tf bash
 ml:
-	docker-compose exec dev mlflow server --host 0.0.0.0
+	docker-compose exec tf mlflow server --host 0.0.0.0
