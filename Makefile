@@ -33,3 +33,5 @@ tf:
 	docker-compose exec tf bash
 ml:
 	docker-compose exec tf mlflow server --host 0.0.0.0
+server-list:
+	docker-compose exec tf bash -c 'jupyter server list'
