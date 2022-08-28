@@ -1,6 +1,5 @@
 ## Working dir
-repo/*
-!repo/.gitkeep
+repo/
 
 ## Docker Compose
 .env
