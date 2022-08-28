@@ -1,6 +1,7 @@
 version: "3"
 services:
   tf:
+    container_name: docker-tensorflow-template-tf
     build:
       context: .
       dockerfile: ./infra/docker/tensorflow/Dockerfile
@@ -17,3 +18,4 @@ services:
     - "6006:6006"
     volumes:
         - ./repo:/home/ec2-user/repo/
+        - ../.jupyter/:/root/.jupyter/
