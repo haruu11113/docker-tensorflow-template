@@ -1,6 +1,10 @@
 version: "3"
 services:
   tf:
+    container_name: docker-tensorflow-template-tf
+    build:
+      context: .
+      dockerfile: ./infra/docker/tensorflow/Dockerfile
     deploy:
       resources:
         reservations:
@@ -13,3 +17,4 @@ services:
     - "8888:8888"
     volumes:
         - ./repo:/home/ec2-user/repo/
+        - ../.jupyter/:/root/.jupyter/

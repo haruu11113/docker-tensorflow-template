@@ -9,7 +9,6 @@ RUN apt-get update && apt-get install -y \
     graphviz
 
 RUN pip install --upgrade pip
-
 # 作業ディレクトリを指定
 WORKDIR /home/ec2-user/repo/
 
