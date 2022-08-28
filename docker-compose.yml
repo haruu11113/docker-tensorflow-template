@@ -1,19 +1,15 @@
 version: "3"
 services:
   tf:
-    build:
-      context: .
-      dockerfile: ./infra/docker/tensorflow/Dockerfile
     deploy:
       resources:
         reservations:
           devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
+            - capabilities: [gpu]
+    build:
+      context: .
+      dockerfile: ./infra/docker/tensorflow/Dockerfile
     ports:
     - "8888:8888"
-    - "5000:5000"
-    - "6006:6006"
     volumes:
         - ./repo:/home/ec2-user/repo/
