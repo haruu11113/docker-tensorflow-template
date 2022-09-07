@@ -1,5 +1,8 @@
 # python3をベースにする
 FROM tensorflow/tensorflow:2.2.3-gpu-py3-jupyter
+# apt-get update や apt-get upgrade の前に
+RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
+RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
 
 RUN apt-get update && apt-get install -y \
     curl \
