@@ -16,8 +16,10 @@ RUN pip install --upgrade pip
 WORKDIR /home/ec2-user/repo/
 
 COPY requirements.txt /home/ec2-user/repo/
-RUN pip install -r  requirements.txt
+# RUN pip install -r  requirements.txt
+RUN pip install jupyterlab
 
+# COPY .jupyter/ /home/ec2-user/
 WORKDIR /home/ec2-user/repo/
 RUN jupyter serverextension enable --py jupyterlab
 

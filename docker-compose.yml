@@ -9,7 +9,9 @@ services:
       resources:
         reservations:
           devices:
-            - capabilities: [gpu]
+            - driver: nvidia
+              device_ids: ['0']
+              capabilities: [gpu]
     build:
       context: .
       dockerfile: ./infra/docker/tensorflow/Dockerfile
