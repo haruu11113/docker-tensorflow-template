@@ -20,3 +20,8 @@ echo "export LD_LIBRARY_PATH=/usr/local/cuda-11.4/lib64:$LD_LIBRARY_PATH" > ~/.z
 
 ## run jupyter lab
 make up
+
+
+## check gpu is recognized
+from tensorflow.python.client import device_lib
+device_lib.list_local_devices()
