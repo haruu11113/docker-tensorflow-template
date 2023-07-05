@@ -3,18 +3,16 @@ services:
   tf:
     container_name: docker-tensorflow-template-tf
     build:
-      context: .
-      dockerfile: ./infra/docker/tensorflow/Dockerfile
+      context: ./repo/
+      dockerfile: ../infra/docker/tensorflow/Dockerfile
     deploy:
       resources:
         reservations:
           devices:
-            - driver: nvidia
-              device_ids: ['0']
-              capabilities: [gpu]
-    build:
-      context: .
-      dockerfile: ./infra/docker/tensorflow/Dockerfile
+            - capabilities: [gpu]
+              # - driver: nvidia
+              # device_ids: ['0']
+              # capabilities: [gpu]
     ports:
     - "8888:8888"
     volumes:
