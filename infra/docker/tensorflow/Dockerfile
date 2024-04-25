@@ -1,7 +1,8 @@
 # python3をベースにする
 # FROM tensorflow/tensorflow:2.2.3-gpu-py3-jupyter
 # FROM tensorflow/tensorflow:2.10.1-gpu-py3-jupyter
-FROM rapidsai/rapidsai-core:23.04-cuda11.8-runtime-ubuntu20.04-py3.10
+# FROM rapidsai/rapidsai-core:23.04-cuda11.8-runtime-ubuntu20.04-py3.10
+FROM rapidsai/rapidsai:23.06-cuda11.8-runtime-ubuntu22.04-py3.10
 # FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu18.04
 RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
 RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
@@ -41,6 +42,6 @@ RUN pip install jupyterlab
 
 
 EXPOSE 8888
-ENTRYPOINT ["jupyter-lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--NotebookApp.token='sha1:9f1bb38324f0:51627de88937e6bd5ca35030f1eab7b5eb072667'"]
+ENTRYPOINT ["jupyter-lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--NotebookApp.token=''"]
 
 CMD ["--notebook-dir=/home/ec2-user/repo/"]
