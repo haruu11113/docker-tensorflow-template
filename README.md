@@ -22,6 +22,28 @@ echo "export LD_LIBRARY_PATH=/usr/local/cuda-11.4/lib64:$LD_LIBRARY_PATH" > ~/.z
 make up
 
 
+## run code-server (VS Code in browser)
+### Start the container
+make up
+
+### Start code-server (in foreground)
+make code-server
+
+### Start code-server (in background)
+make code-server-bg
+
+### Access code-server
+Open your browser and navigate to: http://localhost:8080
+Password: codeserver
+
+### Features available in code-server:
+- Full VS Code interface in browser
+- Terminal access
+- GitHub Copilot support (install extension from VS Code marketplace)
+- Python development with IntelliSense
+- Git integration
+- File explorer
+
 ## check gpu is recognized
 from tensorflow.python.client import device_lib
 device_lib.list_local_devices()

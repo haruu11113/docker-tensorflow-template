@@ -43,6 +43,12 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
 # 作業ディレクトリ
 WORKDIR /home/ec2-user/repo/
 
+# code-server起動スクリプトと設定ファイルをコピー
+RUN mkdir -p /root/.config/code-server
+COPY start_code_server.sh /usr/local/bin/start_code_server.sh
+COPY code-server-config.yaml /root/.config/code-server/config.yaml
+RUN chmod +x /usr/local/bin/start_code_server.sh
+
 # パッケージインストール
 # pip install の代わりに uv pip install を使用
 # --system オプションをつけることで、現在のPython環境（Conda環境）に直接入れます
@@ -52,7 +58,10 @@ RUN uv pip install --system jupyterlab
 # COPY requirements.txt .
 # RUN uv pip install --system -r requirements.txt
 
-EXPOSE 8888
+# code-serverのインストール
+RUN curl -fsSL https://code-server.dev/install.sh | sh
+
+EXPOSE 8888 8080
 
 # ENTRYPOINTとCMD
 # Tokenは固定されていますが、セキュリティ的に許容範囲ならOKです
