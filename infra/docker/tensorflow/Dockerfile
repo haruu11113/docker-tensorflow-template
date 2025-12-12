@@ -59,7 +59,8 @@ RUN uv pip install --system jupyterlab
 # RUN uv pip install --system -r requirements.txt
 
 # code-serverのインストール
-RUN curl -fsSL https://code-server.dev/install.sh | sh
+# バージョンを指定してインストール（セキュリティとリプロダクティビリティのため）
+RUN curl -fsSL https://code-server.dev/install.sh | sh -s -- --version=4.23.1
 
 EXPOSE 8888 8080
 

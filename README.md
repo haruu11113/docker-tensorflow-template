@@ -34,7 +34,9 @@ make code-server-bg
 
 ### Access code-server
 Open your browser and navigate to: http://localhost:8080
-Password: codeserver
+Default Password: codeserver
+
+**Security Note**: For production use, change the default password in `code-server-config.yaml` or set a PASSWORD environment variable
 
 ### Features available in code-server:
 - Full VS Code interface in browser

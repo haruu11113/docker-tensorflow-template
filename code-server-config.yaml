@@ -1,3 +1,6 @@
+# code-server configuration
+# For production use, change the password or use environment variables
+# You can override this by setting PASSWORD environment variable
 bind-addr: 0.0.0.0:8080
 auth: password
 password: codeserver
