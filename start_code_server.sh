@@ -1,9 +1,9 @@
 #!/bin/bash
-# Start code-server with configuration
-# Password: codeserver (you can change this in the script or via environment variable)
+set -euo pipefail
 
-exec code-server \
-  --bind-addr 0.0.0.0:8080 \
-  --auth password \
-  --disable-telemetry \
-  /home/ec2-user/repo/
+# Start code-server with configuration
+# The password and other settings are read from ~/.config/code-server/config.yaml
+# To change the password, modify code-server-config.yaml or set PASSWORD environment variable
+
+# Use config file for settings
+exec code-server /home/ec2-user/repo/
