@@ -1,8 +1,11 @@
 # docker-tensorflow-template
 
-
+Docker-based TensorFlow development environment with JupyterLab and code-server (VS Code in browser) support.
 
 https://www.tensorflow.org/install/source
+
+## Documentation
+- [code-server Setup Guide](docs/CODE_SERVER_SETUP.md) - Browser-based VS Code with GitHub Copilot support
 
 # How to set up jupyter lab (jupyter notebook)
 
