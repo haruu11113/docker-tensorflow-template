@@ -3,18 +3,20 @@ services:
   tf:
     container_name: docker-tensorflow-template-tf
     build:
-      context: ./repo/
-      dockerfile: ../infra/docker/tensorflow/Dockerfile
+      # context: ./repo/
+      dockerfile: ./infra/docker/tensorflow/Dockerfile
     deploy:
       resources:
         reservations:
           devices:
-            - capabilities: [gpu]
-              # - driver: nvidia
-              # device_ids: ['0']
-              # capabilities: [gpu]
+            # - capabilities: [gpu]
+              - driver: nvidia
+                device_ids: ['0', '1', '2']
+                capabilities: [gpu]
     ports:
     - "8888:8888"
+    - "8787:8787"
     volumes:
-        - ./repo:/home/ec2-user/repo/
+        # - /home/storage2/haru/predict_Details/repo:/home/ec2-user/repo/
+        - /home/storage3/haru/predict_Details/repo:/home/ec2-user/repo/
         - ../.jupyter/:/root/.jupyter/
