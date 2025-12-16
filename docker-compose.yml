@@ -16,6 +16,7 @@ services:
     ports:
     - "8888:8888"
     - "8787:8787"
+    - "8080:8080"
     volumes:
         # - /home/storage2/haru/predict_Details/repo:/home/ec2-user/repo/
         - /home/storage3/haru/predict_Details/repo:/home/ec2-user/repo/
