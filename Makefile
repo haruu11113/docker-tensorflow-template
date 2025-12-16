@@ -38,6 +38,6 @@ server-list:
 cp-sshkey:
 	docker cp ~/.ssh/id_rsa `docker-compose ps -q tf`:/root/.ssh/
 code-server:
-	docker compose exec tf start_code_server.sh
+	docker compose exec tf /usr/local/bin/start_code_server.sh
 code-server-bg:
 	docker compose exec -d tf start_code_server.sh
