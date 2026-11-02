@@ -33,6 +33,12 @@ tf:
 	docker compose exec tf bash
 ml:
 	docker compose exec tf mlflow server --host 0.0.0.0
+llm-up:
+	docker compose --profile llm up -d vllm
+llm-down:
+	docker compose --profile llm stop vllm
+llm-logs:
+	docker compose logs --follow vllm
 server-list:
 	docker compose exec tf bash -c 'jupyter server list'
 cp-sshkey:
