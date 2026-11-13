@@ -19,7 +19,7 @@ services:
     - "8080:8080"
     volumes:
         # - /home/storage2/haru/predict_Details/repo:/home/ec2-user/repo/
-        - /home/storage3/haru/predict_Details/repo:/home/ec2-user/repo/
+        - /home/storage2/rescue_storage3/haru/predict_Details/repo:/home/ec2-user/repo/
         - ../.jupyter/:/root/.jupyter/
 
   vllm:
@@ -40,7 +40,7 @@ services:
     - "8000:8000"
     volumes:
         # モデルの置き場。named volume にすると make destroy で消えるので bind mount
-        - /home/storage3/haru/hf_cache:/root/.cache/huggingface
+        - /home/storage2/rescue_storage3/haru/hf_cache:/root/.cache/huggingface
     command:
       - --model
       - Qwen/Qwen3-8B-AWQ          # 11GB 1枚なら 4bit 版。fp16 の 8B は 16GB で載らない
